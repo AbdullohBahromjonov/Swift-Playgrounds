@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//  func countdown(i: Int) {
+//      print(i)  
+//      if i &lt;= 0{
+//          return 
+//      }
+//      else {
+//          countdown(i: i-1)
+//      }
+//  }
+//  
+//countdown(i: 6)
+
+func factorial(x: Int) -&gt; Int {
+    if x == 1 {
+        return 1
+    }
+    else {
+        return  x * factorial(x: x-1)
+    }
+}
+
+print(factorial(x: 5))
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 334}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

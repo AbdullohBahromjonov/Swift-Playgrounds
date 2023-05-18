@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>protocol Name {
+    var firstName: String { get set }
+    var lastName: String { get set }
+}
+protocol Age {
+    var age: Double { get set }
+}
+protocol Hair {
+    var hairColor: String { get set }
+}
+protocol FurColor {
+    var furColor: String { get set }
+}
+
+//MARK: - Protocol Inheritence
+protocol Person: Name, Age, Hair {
+    var height: Double { get set }
+}
+protocol Dog: Name, Age, FurColor {
+    var breed: Double { get set }
+}
+
+protocol Occupation {
+    var occupation: String { get set }
+    var yearlySalary: Double { get set }
+    var experienceYears: Double { get set }
+}
+
+//MARK: - Protocol Composition
+struct Programmer: Person, Occupation {
+    var firstName: String
+    var lastName: String
+    var age: Double
+    var hairColor: String
+    var height: Double
+    var occupation: String
+    var yearlySalary: Double
+    var experienceYears: Double
+}
+
+let abdulloh = Programmer(
+    firstName: "Abdulloh",
+    lastName: "Bahromjonv",
+    age: 14.06,
+    hairColor: "Black",
+    height: 156.5,
+    occupation: "Swift Programmer",
+    yearlySalary: 140_000.5,
+    experienceYears: 3
+)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1096}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

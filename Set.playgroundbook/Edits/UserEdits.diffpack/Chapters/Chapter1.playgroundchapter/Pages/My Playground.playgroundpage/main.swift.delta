@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//MARK: - Set
+var mySet = Set&lt;String&gt;()
+mySet = Set(["one", "two", "three", "abc"])
+mySet.insert("four")
+mySet.remove("one")
+mySet
+var abcSet: Set&lt;String&gt; = (["abc", "ghi", "jkl", "mno"])
+
+//Creating set in which all values from both of set
+var newSetUnion = mySet.union(abcSet)
+
+//Creating set in which only values which is not contained in mySet
+var newSetSubstruct = abcSet.subtracting(mySet)
+print(newSetSubstruct)
+
+//Creating set from two other sets taking only that values which contains in both sets
+var newSetIntersect = mySet.intersection(abcSet)
+
+//Creating set using values from both sets which are not containted in both
+var newSetExclusiveOr = mySet.symmetricDifference(abcSet)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 691}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

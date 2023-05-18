@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>func quidkSort(array: Array&lt;Int&gt;) -&gt; Array&lt;Int&gt; {
+    var less = [Int]()
+    var greater = [Int]()
+    
+    if array.count &gt; 1 {
+        let pivot = array[0]
+        
+        for i in 1...array.count-1 {
+            if array[i] &lt;= pivot {
+                less.append(array[i])
+            }
+            if array[i] &gt; pivot {
+                greater.append(array[i])
+            }
+        }
+        return quidkSort(array: less) + [pivot] + quidkSort(array: greater)
+    }
+    else {
+        return array
+    }
+}
+
+print(quidkSort(array: [10, 5, 2, 3]))
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 552}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

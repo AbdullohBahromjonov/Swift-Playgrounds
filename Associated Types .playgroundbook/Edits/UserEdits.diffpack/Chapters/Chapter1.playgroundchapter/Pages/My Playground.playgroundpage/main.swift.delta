@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+protocol QueueProtocol {
+    associatedtype QueueType
+    mutating func add(item: QueueType)
+    mutating func getItem() -&gt; QueueType?
+    func count() -&gt; Int
+}
+
+class GenericQueue&lt;T&gt;: QueueProtocol {
+    var items = [T]()
+    func add(item: T) {
+        items.append(item)
+    }
+    func getItem() -&gt; T? {
+        return items.count &gt; 0 ? items.remove(at: 0): nil
+    }
+    func count() -&gt; Int {
+        return items.count
+    }
+}
+
+var intQ = GenericQueue&lt;Int&gt;()
+intQ.add(item: 2)
+intQ.add(item: 4)
+intQ.getItem()
+intQ.add(item: 6)
+intQ.count()
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 565}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

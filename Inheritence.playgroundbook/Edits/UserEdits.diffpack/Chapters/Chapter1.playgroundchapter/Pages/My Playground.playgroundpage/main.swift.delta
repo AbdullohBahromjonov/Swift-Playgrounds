@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>class Plant {
+    var height: Double = 0.0
+    var age: Int = 0
+    let name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func growHeight(inches: Double) {
+        height += inches
+    }
+    func toString() -&gt; String {
+        return "\(name) heights is \(height), age is \(age)"
+    }
+    func getDetail() -&gt; String {
+        return "Plant Details"
+    }
+    
+}
+
+class Tree: Plant {
+    var limbs = 0
+    
+    func limbGrow() {
+        limbs += 1
+    }
+    func limbFall() {
+        limbs -= 1
+    }
+    
+    override func getDetail() -&gt; String {
+        let detail = super.getDetail()
+        return "\(detail) Tree Details"
+    }
+    
+}
+
+var tree = Tree(name: "tree")
+tree.age = 5
+tree.height = 4
+tree.limbGrow()
+tree.limbGrow()
+tree.growHeight(inches: 12)
+
+print(tree.toString())
+print(tree.limbs)
+print(tree.height)
+print(tree.getDetail())
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 878}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

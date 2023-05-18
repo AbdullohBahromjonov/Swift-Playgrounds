@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Cocoa
+
+//MARK: - Arrays
+var array = [1, 2, 3, 4, 5, 6, 7]
+let subArray = array[2...4]
+array[1...2] = [15, 16]
+
+//Sort
+array.sort{$0 &lt; $1}
+
+//Sorted
+let sorted = array.sorted{$0 &gt; $1}
+
+//Filter
+let filtered = array.filter{$0 &gt; 7}
+let filtered1 = array.filter{$0 &gt; 7 &amp;&amp; 8 &lt; $0}
+let cities = ["London", "Boston", "Chicago", "Atlanta"]
+print(cities.filter{$0.range(of: "o") != nil})
+
+//Map
+var arrayOne = [10, 20, 30, 40, 50]
+print(arrayOne.map{$0 / 10})
+print(arrayOne.map{"num: \($0)"})
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 492}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

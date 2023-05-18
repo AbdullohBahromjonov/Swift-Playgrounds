@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+class Animal {
+    fileprivate var landAnimal = false
+    fileprivate var landAttack = false
+    fileprivate var landMovement = false
+    
+    fileprivate var seaAnimal = false
+    fileprivate var seaAttack = false
+    fileprivate var seaMovement = false
+    
+    fileprivate var airAnimal = false
+    fileprivate var airAttack = false
+    fileprivate var airMovement = false
+    
+    fileprivate var hitPoints = 0
+    
+    init() {
+        landAnimal = false
+        landAttack = false
+        landMovement = false
+        seaAnimal = false
+        seaAttack = false
+        seaMovement = false
+        airAnimal = false
+        airAttack = false
+        airMovement = false
+    }
+    
+    func isLandAnimal() -&gt; Bool {
+        return landAnimal
+    }
+    func canLandAttack() -&gt; Bool {
+        return landAttack
+    }
+    func canLandMove() -&gt; Bool {
+        return landMovement
+    }
+    func isSeaAnimal() -&gt; Bool {
+        return seaAnimal
+    }
+    func canSeaAttack() -&gt; Bool {
+        return seaAttack
+    }
+    func canSeaMove() -&gt; Bool {
+        return seaMovement
+    }
+    func isAirAnimal() -&gt; Bool {
+        return airAnimal
+    }
+    func canAirAttack() -&gt; Bool {
+        return airAttack
+    }
+    func canAirMove() -&gt; Bool {
+        return airMovement
+    }
+    
+    func doLandAttack() {}
+    func doLandMovement() {}
+    func doSeaAttack() {}
+    func doSeaMovement() {}
+    func doAirAttack() {}
+    func doAirMovement() {}
+    func takeHit(amount: Int) {
+        hitPoints -= amount
+    }
+    func hitPointsRemaining() -&gt; Int {
+        return hitPoints
+    }
+    func isAlive() -&gt; Bool {
+        return hitPoints &gt; 0 ? true : false
+    }
+}
+
+class Lion: Animal {
+    override init() {
+        super.init()
+        landAnimal = true
+        landAttack = true
+        landMovement = true
+        hitPoints = 20
+    }
+    
+    override func doLandAttack() {
+        print("Lion Attack")
+    }
+    override func doLandMovement() {
+        print("Lion Move")
+    }
+}
+
+class Aligator: Animal {
+    override init() {
+        super.init()
+        landAnimal = true
+        seaAnimal = true
+        landAttack = true
+        seaAttack = true
+        landMovement = true
+        seaMovement = true
+    }
+    
+    override func doLandAttack() {
+        print("Aligator Land Attack")
+    }
+    override func doSeaAttack() {
+        print("Aligator Sea Attack")
+    }
+    override func doLandMovement() {
+        print("Aligator Land Move")
+    }
+    override func doSeaMovement() {
+        print("Aligator Sea Move")
+    }
+}
+
+var animals = [Animal]()
+animals.append(Aligator())
+animals.append(Aligator())
+animals.append(Lion())
+
+for (index, animal) in animals.enumerated() {
+    if animal.isAirAnimal() {
+        print("Animal at \(index) is Air")
+    }
+    if animal.isLandAnimal() {
+        print("Animal at \(index) is Land")
+    }
+    if animal.isSeaAnimal() {
+        print("Animal at \(index) is Sea")
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2943}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

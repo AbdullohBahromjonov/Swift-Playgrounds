@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>class MyClass {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        print("Initializing class with name \(self.name)")
+    }
+    deinit {
+        print("Releasing class with name \(self.name)")
+    }
+}
+
+var class1ref1: MyClass? = MyClass(name: "One")
+var class2ref1: MyClass? = MyClass(name: "Two")
+var class2ref2: MyClass? = class2ref1
+
+print("Setting class1ref1 to nil")
+class1ref1 = nil
+
+print("Setting class2ref1 to nil")
+class2ref1 = nil 
+
+print("Setting class2ref2 to nil")
+class2ref2 = nil
+
+//MARK: - Strong reference cycle
+print(" ")
+print("STRONG REFERENCE")
+print(" ")
+
+class MyClass1_Strong {
+    var name: String
+    var class2: MyClass2_Strong?
+    
+    init(name: String) {
+        self.name = name
+        print("Initializing class1_strong with name \(name)")
+    }
+    deinit {
+        print("Realizing class1_strong with name \(name)")
+    }
+    
+}
+
+class MyClass2_Strong {
+    var name: String
+    var class1: MyClass1_Strong?
+    
+    init(name: String) {
+        self.name = name
+        print("Initializing class2_storng with name \(name)")
+    }
+    deinit {
+        print("Realizing class2_strong with name \(name)")
+    }
+    
+}
+
+var class1: MyClass1_Strong? = MyClass1_Strong(name: "MyClass1_Strong")
+var class2: MyClass2_Strong? = MyClass2_Strong(name: "MyClass2_Strong")
+
+class1?.class2 = class2
+class2?.class1 = class1
+
+print("Setting classes to nil")
+
+class2 = nil
+class1 = nil
+
+//MARK: - Week and Unowned reference 
+print("")
+print("Week and Unownde")
+print("")
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1525}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

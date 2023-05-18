@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+protocol Animal {
+    var hitPoints: Int { get set }
+}
+
+extension Animal {
+    mutating func takeHit(amount: Int) {
+        hitPoints -= amount
+    }
+    func hitPointsRemaining() -&gt; Int {
+        return hitPoints
+    }
+    func isAlive() -&gt; Bool {
+        return hitPoints &gt; 0 ? true: false
+    }
+}
+
+protocol LandAnimal: Animal {
+    var landAttack: Bool { get }
+    var landMovement: Bool { get }
+    
+    func doLandAttack() 
+    func doLandMove()
+}
+protocol SeaAnimal: Animal {
+    var seaAttack: Bool { get }
+    var seaMovement: Bool { get }
+    
+    func doSeaAttack()
+    func doSeaMove()
+}
+protocol AirAnimal: Animal {
+    var airAttack: Bool { get }
+    var airMovement: Bool { get }
+    
+    func doAirAttack()
+    func doAirMovement()
+}
+
+
+struct Lion: LandAnimal {
+    var hitPoints = 20
+    var landAttack = true
+    var landMovement = true
+    
+    func doLandAttack() {
+        print("Lion Attack")
+    }
+    func doLandMove() {
+        print("Lion Move")
+    }
+}
+
+struct Alligator: LandAnimal, SeaAnimal {
+    var hitPoints = 35
+    var landAttack = true
+    var landMovement = true
+    var seaAttack = true
+    var seaMovement = true
+    
+    func doLandAttack() {
+        print("Aligator land Attack")
+    }
+    func doLandMove() {
+        print("Aligator land Move")
+    }
+    func doSeaAttack() {
+        print("Aligator sea Attack")
+    }
+    func doSeaMove() {
+        print("Aligator sea Move")
+    }
+    
+}
+
+
+var animals = [Animal]()
+
+animals.append(Alligator())
+animals.append(Alligator())
+animals.append(Lion())
+
+for (index, animal) in animals.enumerated() { 
+    if let _ = animal as? AirAnimal {
+        print("Animal at \(index) is Air")
+    }
+    if let _ = animal as? LandAnimal {
+        print("Animal at \(index) is Land")
+    }
+    if let _ = animal as? SeaAnimal {
+    print("Animal at \(index) is Sea")
+    }
+}
+
+for (index, animal) in animals.enumerated() where animal is SeaAnimal{
+    print("Only sea animal: \(index)")
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1979}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

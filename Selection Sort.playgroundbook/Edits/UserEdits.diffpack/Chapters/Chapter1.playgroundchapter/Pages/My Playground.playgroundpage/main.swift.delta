@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>func findSmallest(arr: Array&lt;String&gt;, find: String) -&gt; Array&lt;String&gt;{        
+    var myArray: Array&lt;String&gt; = []
+    
+    for i in 0...arr.count-1 {
+        if arr[i] == find{
+            myArray.append(arr[i])
+        }
+    }
+    return myArray
+} 
+
+//  func selectionSort(arr: Array&lt;Int&gt;) -&gt; Array&lt;Int&gt; {
+//      var newArr = [Int]()
+//      var arr1 = arr
+//      
+//      for i in 0...arr1.count-1 {
+//          var smallest = findSmallest(arr: arr1)
+//          newArr.append(arr1[smallest])
+//          arr1.remove(at: smallest)
+//      }
+//      return newArr
+//  }
+//  
+//  let my_arry = [5, 4, 3, 2, 6]
+//  
+//  print(selectionSort(arr: my_arry))
+//  
+
+let myArray = ["helmet", "gloves", "helmet", "ring"]
+
+print(findSmallest(arr: myArray, find: "gloves"))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 766}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

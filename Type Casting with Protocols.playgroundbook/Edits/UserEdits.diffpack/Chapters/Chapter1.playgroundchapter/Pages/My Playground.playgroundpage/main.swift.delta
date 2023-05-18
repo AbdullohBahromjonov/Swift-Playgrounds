@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+protocol PersonProtocol {
+    var name: String { get set }
+    var lastName: String { get set }
+    var birthDate: Date { get set }
+    var profession: String { get }
+    
+    init(name: String, lastName: String, birthDate: Date)
+}
+
+class SwiftProgrammer: PersonProtocol {
+    var name: String
+    var lastName: String
+    var birthDate: Date
+    var profession = "Swift Programmer"
+    
+    required init(name: String, lastName: String, birthDate: Date) {
+        self.name = name
+        self.lastName = lastName
+        self.birthDate = birthDate
+    }
+}
+
+class FootballPlayer: PersonProtocol {
+    var name: String
+    var lastName: String
+    var birthDate: Date
+    var profession = "Football Player in Juventus"
+    
+    required init(name: String, lastName: String, birthDate: Date) {
+        self.name = name 
+        self.lastName = lastName
+        self.birthDate = birthDate
+    }
+}
+
+var bDateCmponents = DateComponents()
+bDateCmponents.day = 15
+bDateCmponents.month = 12
+bDateCmponents.year = 2006
+
+var bDate = Calendar.current.date(from: bDateCmponents)
+
+var programmer: PersonProtocol = SwiftProgrammer(name: "Abdulloh", lastName: "Bahromjonov", birthDate: bDate!)
+
+var footballPlayer: PersonProtocol = FootballPlayer(name: "Cristiano", lastName: "Ronaldo", birthDate: bDate!)
+
+var people: [PersonProtocol] = [programmer, footballPlayer]
+
+//IS
+for person in people {
+    switch person {
+    case is SwiftProgrammer:
+        print(person.name + " is Swift programmer")
+    case is FootballPlayer: 
+            print(person.name + " is Football player")
+    default:
+        print(person.name + " is unknown type")
+    }
+}
+
+//AS
+for person in people {
+    if let p = person as? SwiftProgrammer {
+        print(person.name + " is swift programmer")
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1788}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>class MyClass1_Weak {
+    var name = ""
+    var class2: MyClass2_Weak? 
+    init(name: String) {
+        self.name = name
+        print("Initializing class1_Weak with name \(self.name)") 
+    }
+    deinit {
+        print("Releasing class1_Weak with name \(self.name)")
+    } 
+}
+class MyClass2_Weak {
+    var name = ""
+    weak var class1: MyClass1_Weak? 
+    init(name: String) {
+        self.name = name
+        print("Initializing class2_Weak with name \(self.name)") 
+    }
+    deinit {
+        print("Releasing class2_Weak with name \(self.name)")
+    } 
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 561}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>let class1: MyClass1_Weak? = MyClass1_Weak(name: "Class1_Weak") 
+let class2: MyClass2_Weak? = MyClass2_Weak(name: "Class2_Weak")
+class2?.class1 = class1
+class1?.class2 = class2 
+print("Classes going out of scope")
+</string>
+			<key>ModifiedRange</key>
+			<string>{562, 214}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

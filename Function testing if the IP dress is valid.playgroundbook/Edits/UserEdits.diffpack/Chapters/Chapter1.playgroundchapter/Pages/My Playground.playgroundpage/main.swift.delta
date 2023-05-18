@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>func isValidIP(ipAdrr: String?) -&gt; Bool {
+    
+    guard let ipAdrr = ipAdrr else {
+        return false
+    }
+    let octets = ipAdrr.split(separator: ".").map{String($0)}
+    guard octets.count == 4 else {
+        return false
+    }
+    for octet in octets {
+        guard validOctet(octet: octet) else {
+            return false
+        }
+    }
+    return true
+}
+
+func validOctet(octet: String) -&gt; Bool {
+    guard let num = Int(String(octet)),num &gt;= 0 &amp;&amp; num &lt; 256 else {
+        return false
+    }
+    return true
+}
+
+let is_valid_IP = isValidIP(ipAdrr: "10.0.1.250")
+print(is_valid_IP)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 591}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

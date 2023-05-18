@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+enum PlayerNumberError: Error {
+    case NumberTooHight(description: String)
+    case NumberTooLow(description: String)
+    case NumberDoesNotExist
+    case NumberAlreadyAssigned
+}
+
+typealias BaseballPlayer = (firstName: String, lastName: String, number: Int)
+
+
+
+struct BaseballTeam {
+    var maxNumber: Int
+    var minNumber: Int
+    var players: Dictionary&lt;Int, BaseballPlayer&gt;
+    
+    //MARK: - Throwing Errors
+    mutating func addPlayer(player: BaseballPlayer) throws {
+        guard player.number &lt; maxNumber else {
+            throw PlayerNumberError.NumberTooHight(description: "Max number is \(maxNumber)")
+        }
+        guard player.number &gt; minNumber else {
+            throw PlayerNumberError.NumberTooLow(description: "Min number is \(minNumber)")
+        }
+        guard players[player.number] == nil else {
+            throw PlayerNumberError.NumberAlreadyAssigned
+        }
+        players[player.number] = player
+    }
+    
+    func getPlayerByNumber(number: Int) throws -&gt; BaseballPlayer {
+        if let player = players[number] {
+            return player
+        } else {
+            throw PlayerNumberError.NumberDoesNotExist
+        }
+    }
+}
+
+var abdulloh: BaseballPlayer
+abdulloh.firstName = "Abdulloh"
+abdulloh.lastName = "Bahromjonov"
+abdulloh.number = 20
+
+var jalloldin: BaseballPlayer 
+jalloldin.firstName = "Jalloldin"
+jalloldin.lastName = "Mamatkulov"
+jalloldin.number = 30
+
+var myTeam = BaseballTeam(maxNumber: 30, minNumber: 10, players: [29: abdulloh])
+
+//MARK: - Catching Errors
+do {
+    let player = try myTeam.getPlayerByNumber(number: 30)
+    print("Player is \(player.firstName) \(player.lastName)")
+} catch PlayerNumberError.NumberDoesNotExist {
+    print("No player has that number")
+}
+
+do {
+    let player = try myTeam.addPlayer(player: ("Jhon", "Paul", 29))
+} catch PlayerNumberError.NumberTooHight(let description) {
+    print("Error: \(description)")
+} catch PlayerNumberError.NumberTooLow(let description) {
+    print("Error: \(description)")
+} catch PlayerNumberError.NumberAlreadyAssigned {
+    print("Error: number already assigned")
+} catch {
+    print("Error: Unknown error")
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2153}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//MARK: - Binary Search
+func binarySearch(list: Array&lt;Int&gt;, item: Int) -&gt; Int? {
+    var low = 0
+    var high = list.count - 1
+    
+    while low &lt;= high {
+        let mid = (low + high) / 2
+        let guess = list[mid]
+        
+        if guess == item {
+            return mid
+        }
+        
+        if guess &gt; item {
+            high = mid - 1
+            
+        } else {
+            low = mid + 1
+        }
+    }
+    return nil
+}
+
+//Sellection sort
+func findSmallest(arr: Array&lt;Int&gt;) -&gt; Int{
+    var smallest = arr[0]
+    var smallest_index = 0
+    
+    for i in 0...arr.count-1 {
+        if arr[i] &lt; smallest{
+            smallest = arr[i]
+            smallest_index = i
+        }
+    }
+    return smallest_index
+} 
+
+func selectionSort(arr: Array&lt;Int&gt;) -&gt; Array&lt;Int&gt; {
+    var newArr = [Int]()
+    var arr1 = arr
+    
+    for i in 0...arr1.count-1 {
+        var smallest = findSmallest(arr: arr1)
+        newArr.append(arr1[smallest])
+        arr1.remove(at: smallest)
+    }
+    return newArr
+}
+
+let my_list = [0, 0, 2, 9, 6, 0, 1]
+
+print(findSmallest(arr: my_list))
+print(selectionSort(arr: my_list))
+print(binarySearch(list: selectionSort(arr: my_list), item: 14))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1179}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

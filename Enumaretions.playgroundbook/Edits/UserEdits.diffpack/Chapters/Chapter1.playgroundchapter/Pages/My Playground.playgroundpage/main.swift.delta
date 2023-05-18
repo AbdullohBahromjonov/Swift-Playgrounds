@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//MARK: - Enumerations
+enum Devices: String {
+    case MusicP = "iPod"
+    case Phone = "iPhone"
+    case Tablet = "iPad"
+}
+
+print(Devices.MusicP.rawValue)
+
+enum Product {
+    case Laptop(String, Int)
+    case Book(String)
+}
+
+let mastering_swift = Product.Book("Mastering Swift 4")
+let macbook = Product.Laptop("MacBook Pro", 13)
+
+switch macbook {
+
+case .Laptop(let name, let inch):
+    print("this is \(inch) inch \(name)")
+    
+case .Book(let name):
+    print("I bought a book called \(name)")
+    
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 503}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

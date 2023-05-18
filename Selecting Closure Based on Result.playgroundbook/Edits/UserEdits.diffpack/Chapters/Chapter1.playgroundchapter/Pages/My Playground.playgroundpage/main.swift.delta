@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+class TestType {
+    typealias ResultsClosure = ((String) -&gt; Void)
+    
+    func isGreater(numOne: Int, numTwo: Int, successHandler: ResultsClosure, failureHandler: ResultsClosure) {
+        if numOne &gt; numTwo {
+            successHandler("\(numOne) is greater than \(numTwo)")
+        } else {
+            failureHandler("\(numOne) is not greater than \(numTwo)")
+        }
+    }
+}
+
+var succes: TestType.ResultsClosure = {
+    print("Success: \($0)")
+}
+var failure: TestType.ResultsClosure = {
+    print("Failure: \($0)")
+}
+
+var test = TestType()
+test.isGreater(numOne: 6, numTwo: 8, successHandler: succes, failureHandler: failure)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 653}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

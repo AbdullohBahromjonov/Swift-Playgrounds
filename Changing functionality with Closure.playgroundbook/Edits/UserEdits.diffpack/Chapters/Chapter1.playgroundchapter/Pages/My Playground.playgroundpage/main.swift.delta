@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import  Foundation
+
+struct TestType {
+    typealias getNumClosure = ((Int, Int) -&gt; Int)
+    
+    var numOne = 5
+    var numTwo = 8
+    
+    var results = 0
+    
+    mutating func getNum(hendler: getNumClosure) -&gt; Int {
+        results = hendler(numOne, numTwo)
+        print("Results: \(results)")
+        return results
+    }
+}
+
+var max: TestType.getNumClosure = {
+    if $0 &gt; $1 {
+        return $0
+    } else {
+        return $1
+    }
+}
+
+var min: TestType.getNumClosure = {
+    if $0 &lt; $1 {
+        return $0
+    } else {
+        return $1
+    }
+}
+
+var myType = TestType()
+
+myType.getNum(hendler: max)
+myType.getNum(hendler: min)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 633}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

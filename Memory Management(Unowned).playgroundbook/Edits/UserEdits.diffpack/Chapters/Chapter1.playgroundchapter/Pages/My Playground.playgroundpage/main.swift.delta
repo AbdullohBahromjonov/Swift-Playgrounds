@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>class MyClass1_Unowned {
+    var name = ""
+    unowned let class2: MyClass2_Unowned 
+    init(name: String, class2: MyClass2_Unowned) {
+        self.name = name
+        self.class2 = class2
+        print("Initializing class1_Unowned with name \(self.name)")
+    }
+    deinit {
+        print("Releasing class1_Unowned with name \(self.name)") 
+    }
+}
+
+class MyClass2_Unowned {
+    var name = ""
+    var class1: MyClass1_Unowned? 
+    init(name: String) {
+        self.name = name
+        print("Initializing class2_Unowned with name \(self.name)") 
+        
+    }
+    deinit {
+        print("Releasing class2_Unowned with name \(self.name)")
+    } 
+}
+
+
+let class2 = MyClass2_Unowned(name: "Class2_Unowned")
+let class1: MyClass1_Unowned? = MyClass1_Unowned(name: "class1_Unowned", class2: class2)
+class2.class1 = class1
+print("Classes going out of scope")
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 857}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

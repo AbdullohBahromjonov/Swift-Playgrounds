@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+import Cocoa
+
+protocol PersonProtocol {
+    var name: String{ get set }
+    var lastName: String { get set }
+    var birthDate: String { get set }
+    var profession: String { get }
+    init(name: String, lastName: String, birthDate: String)
+}
+
+func updatePerson(person: PersonProtocol) -&gt; PersonProtocol {
+    
+    
+    return person
+}
+
+class Programmer: PersonProtocol {
+    var name: String
+
+    var lastName: String
+
+    var birthDate: String
+
+    var profession = "programmer"
+
+    required init(name: String, lastName: String, birthDate: String) {
+        self.name = name
+        self.lastName = lastName
+        self.birthDate = birthDate
+    }
+
+    
+}
+
+
+var programmerZafar: PersonProtocol = Programmer(name: "Zafar", lastName: "Olimov", birthDate: "24.02.1977")
+
+var programmerSarvar: PersonProtocol = Programmer(name: "Sarvar", lastName: "Mamatkulov", birthDate: "23.08.1980")
+
+var programmerAbdulloh: PersonProtocol = Programmer(name: "Abdulloh", lastName: "Bahromjonov", birthDate: "15.12.2006")
+
+var people: [PersonProtocol] = [programmerZafar, programmerSarvar, programmerAbdulloh]
+
+
+for person in people {
+    print(person.lastName + " " + person.name + " " + person.profession)
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1215}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
