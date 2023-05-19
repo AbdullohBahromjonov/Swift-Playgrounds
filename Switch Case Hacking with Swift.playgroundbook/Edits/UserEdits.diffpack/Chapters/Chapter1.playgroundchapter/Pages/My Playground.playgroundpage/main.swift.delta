@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>enum Marvel {
+    case iron_man, spider_man, capitan_america, hulk
+}
+
+let character = Marvel.hulk
+
+switch character {
+case .iron_man: 
+    print("Genius, billioner, playboy, philontrop")
+case .spider_man: 
+    print("Your frindly naighborhood spider man")
+case .hulk, .capitan_america: 
+    print("Hulk SMASH!!!")
+case .hulk: 
+    print("Avengers! Assemble")
+
+}
+
+let day = 5
+print("My true love gave to me…")
+
+switch day {
+case 5:
+    print("5 golden rings")
+    fallthrough
+case 4:
+    print("4 calling birds")
+    fallthrough
+case 3:
+    print("3 French hens")
+    fallthrough
+case 2:
+    print("2 turtle doves")
+    fallthrough
+default:
+    print("A partridge in a pear tree")
+}
+
+for i in 1...12 {
+    print("The \(i) times table:")
+
+    for j in 1...12 {
+        print("  \(j) x \(i) is \(j * i)")
+    }
+
+    print()
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 823}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
