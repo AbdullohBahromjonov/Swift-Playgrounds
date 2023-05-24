@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>struct Employee {
+    let name: String
+    var vacationRemaining: Int
+    
+    //If function inside structure change data belonging to struct, it must be marked as mutating
+    mutating func takeVacation(days: Int) {
+        if vacationRemaining &gt; days {
+            vacationRemaining -= days 
+            print("Days remaning: \(vacationRemaining)")
+        } else {
+            print("Oops! There aren't enough days remaning")
+        }
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 447}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//You can't create instance of struct as a constant because if you have mutating func in it, swift will refuse to build it
+var adam = Employee(name: "Adam", vacationRemaining: 14)
+adam.takeVacation(days: 11)
+print(adam.vacationRemaining)
+</string>
+			<key>ModifiedRange</key>
+			<string>{448, 238}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
